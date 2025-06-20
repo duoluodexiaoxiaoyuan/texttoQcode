@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二维码生成器</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 二维码生成器</h1>
+            <p>支持文字生成二维码</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <!-- 文字输入区域 -->
+                <div class="input-card">
+                    <h3>📝 文字内容</h3>
+                    <textarea id="textInput" placeholder="请输入要生成二维码的文字内容..."></textarea>
+                    <button onclick="generateTextQR()" class="btn btn-primary">生成文字二维码</button>
+                </div>
+
+                <!-- 图片上传区域 -->
+                <!-- <div class="input-card">
+                    <h3>🖼️ 图片内容</h3>
+                    <div class="file-upload">
+                        <input type="file" id="imageInput" accept="image/*" onchange="handleImageUpload(event)">
+                        <label for="imageInput" class="upload-label">
+                            <span class="upload-icon">📁</span>
+                            选择图片文件
+                        </label>
+                        <div id="imagePreview" class="preview-area"></div>
+                    </div>
+                    <button onclick="generateImageQR()" class="btn btn-secondary" disabled id="imageBtn">生成图片二维码</button>
+                </div> -->
+
+                <!-- 视频上传区域 -->
+                <!-- <div class="input-card">
+                    <h3>🎬 视频内容</h3>
+                    <div class="file-upload">
+                        <input type="file" id="videoInput" accept="video/*" onchange="handleVideoUpload(event)">
+                        <label for="videoInput" class="upload-label">
+                            <span class="upload-icon">📁</span>
+                            选择视频文件
+                        </label>
+                        <div id="videoPreview" class="preview-area"></div>
+                    </div>
+                    <button onclick="generateVideoQR()" class="btn btn-accent" disabled id="videoBtn">生成视频二维码</button>
+                </div> -->
+            </div>
+
+            <!-- 二维码显示区域 -->
+            <div class="output-section">
+                <div class="qr-display">
+                    <h3>生成的二维码</h3>
+                    <div id="qrCodeContainer">
+                        <div class="empty-state">
+                            <div class="qr-placeholder">📱</div>
+                            <p>请选择内容类型并生成二维码</p>
+                        </div>
+                    </div>
+                    <div class="qr-actions" id="qrActions" style="display: none;">
+                        <button onclick="downloadQR()" class="btn btn-download">📥 下载二维码</button>
+                        <button onclick="clearQR()" class="btn btn-clear">🗑️ 清除</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 提示信息 -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
